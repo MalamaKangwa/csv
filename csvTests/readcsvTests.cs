@@ -10,9 +10,9 @@ namespace csv.Tests
     public class readcsvTests
     {
         [TestMethod()]
-        public void MainTest()
+        public void Read1Test()
         {
-            readcsv.Main();
+            Readcsv.Main();
             Assert.Fail();
         }
     }
