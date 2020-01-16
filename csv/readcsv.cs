@@ -11,6 +11,7 @@ namespace Csv
         {
             Type mapType = typeof(M);
             IList<T> results = new List<T>();
+            
             using var reader = new StreamReader(absolutePath);
             using (var csv = new CsvReader(reader))
             {

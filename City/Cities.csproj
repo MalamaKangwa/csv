@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\csv\Csv.csproj" />
+    <PackageReference Include="CsvHelper" Version="12.3.2" />
+    <PackageReference Include="EntityFramework" Version="6.4.0" />
   </ItemGroup>
 
 </Project>
