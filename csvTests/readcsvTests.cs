@@ -3,18 +3,28 @@ using csv;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Cities;
+using System.IO;
 
 namespace csv.Tests
 {
     [TestClass()]
-    public class readcsvTests
+    public class ReadcsvTests
     {
         [TestMethod()]
-        public void Read1Test()
+        public void ReadAllRecordsInCSVTest()
         {
-            Readcsv.Main();
-            //Create for Branch Malama
-            Assert.Fail();
+            var absolutePath = "c://csvfiles//worldcities.csv";
+            List<City> result = Readcsv.ReadAllCSV(absolutePath);
+            Assert.AreEqual(15493, result.Count);
         }
+
+       [TestMethod()]
+       public void ReadOneRecordInCSVTest()
+       {
+           var absolutePath = "c://csvfiles//worldcities.csv";
+           List<City> result = Readcsv.ReadOneCSVRecord(absolutePath);
+           Assert.AreEqual(1, result.Count);
+       }
     }
 }
