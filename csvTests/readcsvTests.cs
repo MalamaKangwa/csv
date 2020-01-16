@@ -19,6 +19,8 @@ namespace csv.Tests
             var path = "c://csvfiles//worldcities.csv";
             var doubleTypeConversion = new DoubleConversion();
             IList<CityModel> myList = ReadCsv.ReadCsvFile<CityModel, CityMap>(path, doubleTypeConversion);
+            
+            //10 Records to used for test  
             var countryCapitalQuery = (from s in myList
                            where s.Capital.Equals("primary")
                            orderby s.Country ascending
