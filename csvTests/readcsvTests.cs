@@ -2,6 +2,7 @@
 using Csv;
 using CsvHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Model;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -19,9 +20,9 @@ namespace csv.Tests
             var doubleTypeConversion = new DoubleConversion();
             IList<CityModelImport> myList = ReadCsv.ReadCsvFile<CityModelImport, CityMap>(path, doubleTypeConversion);
             var countryCapitalQuery = (from s in myList
-                                      where s.Capital.Equals("primary")
-                                      orderby s.Country ascending
-                                      select s);
+                                       where s.Capital.Equals("primary")
+                                       orderby s.Country ascending
+                                       select s);
             /*
             foreach (CityModelImport city in countryCapitalQuery)
             {
@@ -61,16 +62,16 @@ namespace csv.Tests
             using (var db = new CitiesContext())
             {
                 foreach (var country in countryGroups)
-            {
-                var countryName = country.Key.Country;
-                var ISO2 = country.Key.ISO2;
-                var ISO3 = country.Key.ISO3;
-                var CountryEntity = new CountryEntity
                 {
-                    Name = countryName,
-                    ISO2 = ISO2,
-                    ISO3 = ISO3
-                };
+                    var countryName = country.Key.Country;
+                    var ISO2 = country.Key.ISO2;
+                    var ISO3 = country.Key.ISO3;
+                    var CountryEntity = new CountryEntity
+                    {
+                        Name = countryName,
+                        ISO2 = ISO2,
+                        ISO3 = ISO3
+                    };
                     db.Countries.Add(CountryEntity);
                     db.SaveChanges();
                     int id = CountryEntity.CountryID;
