@@ -1,4 +1,5 @@
 ﻿using CsvHelper.Configuration;
+using Model;
 
 namespace Cities
 {
