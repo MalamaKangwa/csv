@@ -15,7 +15,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csvTests", "csvTests\csvTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cities", "City\Cities.csproj", "{DBD3FB53-7C34-4AC4-823E-01495F3EA52C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityOrm", "EntityOrm\EntityOrm.csproj", "{367F2CD4-6157-4139-91A4-734233BE7D34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityOrm", "EntityOrm\EntityOrm.csproj", "{367F2CD4-6157-4139-91A4-734233BE7D34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{8836680C-34E6-448B-A34E-4D9F64B98156}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadFromCSV", "ReadFromCSV\ReadFromCSV.csproj", "{0C1D3D72-25AE-4E1F-BF35-933837705B18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteToCSV", "WriteToCSV\WriteToCSV.csproj", "{8C9F57E3-3628-4499-9F51-5A1829DF0933}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +45,18 @@ Global
 		{367F2CD4-6157-4139-91A4-734233BE7D34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{367F2CD4-6157-4139-91A4-734233BE7D34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{367F2CD4-6157-4139-91A4-734233BE7D34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8836680C-34E6-448B-A34E-4D9F64B98156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8836680C-34E6-448B-A34E-4D9F64B98156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8836680C-34E6-448B-A34E-4D9F64B98156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8836680C-34E6-448B-A34E-4D9F64B98156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C1D3D72-25AE-4E1F-BF35-933837705B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C1D3D72-25AE-4E1F-BF35-933837705B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C1D3D72-25AE-4E1F-BF35-933837705B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C1D3D72-25AE-4E1F-BF35-933837705B18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C9F57E3-3628-4499-9F51-5A1829DF0933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C9F57E3-3628-4499-9F51-5A1829DF0933}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C9F57E3-3628-4499-9F51-5A1829DF0933}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C9F57E3-3628-4499-9F51-5A1829DF0933}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
