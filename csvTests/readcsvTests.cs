@@ -3,6 +3,7 @@ using Csv;
 using CsvHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Model;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -19,23 +20,16 @@ namespace csv.Tests
             var path = "c://csvfiles//worldcities.csv";
             var doubleTypeConversion = new DoubleConversion();
             IList<CityModelImport> myList = ReadCsv.ReadCsvFile<CityModelImport, CityMap>(path, doubleTypeConversion);
+
             var countryCapitalQuery = (from s in myList
                                        where s.Capital.Equals("primary")
                                        orderby s.Country ascending
                                        select s);
-            /*
+            
             foreach (CityModelImport city in countryCapitalQuery)
             {
                 Debug.Write(city.Country + ": " + city.City_name + Environment.NewLine);
-            }*/
-            var queryName = nameof(countryCapitalQuery);
-            var writePath = "c://csvfiles//" + queryName + ".csv";
-            using (var writer = new StreamWriter(writePath))
-            using (var csv = new CsvWriter(writer))
-            {
-                csv.WriteRecords(countryCapitalQuery);
             }
-            Assert.IsTrue(File.Exists(writePath));
 
             var QSCount = (from city in countryCapitalQuery
                            select city).Count();
@@ -48,6 +42,8 @@ namespace csv.Tests
             {
                 dbContext.Database.Connection.Close();
             }
+
+
             var countryGroups = from city in countryCapitalQuery
                                 group city by new
                                 {

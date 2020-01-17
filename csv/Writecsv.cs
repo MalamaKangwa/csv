@@ -10,7 +10,7 @@ namespace Csv
 {
         public class Writecsv
         {
-            public static string WriteCsvFile(IOrderedEnumerable<CityModel> QueryX)
+            public static string WriteCsvFile(IOrderedEnumerable<CityModelImport> QueryX)
             {
                 var queryName = nameof(QueryX);
                 var fileAddress = "c://csvWriteFiles//" + queryName + ".csv";
@@ -18,7 +18,7 @@ namespace Csv
                 using (var writer = new StreamWriter(fileAddress))
                 using (var csv = new CsvWriter(writer))
                 {
-                    csv.WriteRecords(QueryX);
+                    csv.WriteRecords(fileAddress);
                 }
 
                 return fileAddress;
