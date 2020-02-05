@@ -1,10 +1,10 @@
-﻿using Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using Model;
 
-namespace Cities
+namespace EntityOrm
 {
     public class CountryEntity : CountryModel
     {
@@ -14,3 +14,5 @@ namespace Cities
         public virtual List<CityEntity> Cities { get; set; }
     }
 }
+
+

@@ -4,7 +4,7 @@ using System.Text;
 using Model;
 using System.ComponentModel.DataAnnotations;
 
-namespace Cities
+namespace EntityOrm
 {
     public class CityEntity : CityModel
     {

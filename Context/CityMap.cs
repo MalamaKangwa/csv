@@ -1,7 +1,10 @@
-﻿using CsvHelper.Configuration;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using CsvHelper.Configuration;
 using Model;
 
-namespace Cities
+namespace Context
 {
     public sealed class CityMap : ClassMap<CityModelImport>
     {

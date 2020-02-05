@@ -2,7 +2,7 @@
 using CsvHelper.Configuration;
 using CsvHelper.TypeConversion;
 
-namespace Cities
+namespace Context
 {
     public class DoubleConversion : DoubleConverter
     {

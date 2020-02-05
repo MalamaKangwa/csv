@@ -11,8 +11,10 @@ namespace Csv
         {
             Type mapType = typeof(M);
             IList<T> results = new List<T>();
+
+
             using var reader = new StreamReader(absolutePath);
-            using (var csv = new CsvReader(reader))
+            using (var csv = new CsvReader(reader, System.Globalization.CultureInfo.InvariantCulture))
             {
                 csv.Configuration.HasHeaderRecord = true;
                 csv.Configuration.TypeConverterCache.AddConverter(typeof(double), DoubleTypeConversion);

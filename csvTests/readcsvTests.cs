@@ -1,18 +1,18 @@
-﻿using Cities;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Csv;
-using CsvHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Model;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
+using System.Text;
+using Model;
+using Context;
 using System.Linq;
+using EntityOrm;
+using System.Diagnostics;
 
-namespace csv.Tests
+namespace Csv.Tests
 {
     [TestClass()]
-    public class ReadcsvTests
+    public class ReadCsvTests
     {
         [TestMethod()]
         public void ReadInCSVTest()
@@ -25,7 +25,7 @@ namespace csv.Tests
                                        where s.Capital.Equals("primary")
                                        orderby s.Country ascending
                                        select s);
-            
+
             foreach (CityModelImport city in countryCapitalQuery)
             {
                 Debug.Write(city.Country + ": " + city.City_name + Environment.NewLine);
@@ -38,7 +38,7 @@ namespace csv.Tests
 
             Assert.AreEqual(15493, myList.Count());
 
-            using (var dbContext = new CitiesContext())
+            using (var dbContext = new CityDBContext())
             {
                 dbContext.Database.Connection.Close();
             }
@@ -55,7 +55,7 @@ namespace csv.Tests
                                 orderby countryGroup.Key.Country
                                 select countryGroup;
 
-            using (var db = new CitiesContext())
+            using (var db = new CityDBContext())
             {
                 foreach (var country in countryGroups)
                 {

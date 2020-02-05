@@ -14,8 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\City\Cities.csproj" />
+    <ProjectReference Include="..\Context\Context.csproj" />
     <ProjectReference Include="..\csv\Csv.csproj" />
+    <ProjectReference Include="..\EntityOrm\EntityOrm.csproj" />
+    <ProjectReference Include="..\Model\Model.csproj" />
   </ItemGroup>
 
 </Project>
